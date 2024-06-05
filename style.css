@@ -56,9 +56,9 @@ body {
 
 .content h2 {
     margin-top: 0;
-    margin-bottom: 0;
     color: #006D77;
     font-size: 1.5em;
+    margin-bottom: 0;
 }
 
 .content p {
@@ -97,6 +97,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 15px; /* Adding margin-top to the container */
     padding-top: 15px; /* Adding padding-top to the container */
 }
 
@@ -125,4 +126,24 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .map-container, .content {
+        min-width: 100%;
+        flex: none;
+    }
+    
+    .map-container {
+        height: 300px; /* Adjust height as needed */
+    }
+    
+    .scrollable-content {
+        max-height: 200px; /* Adjust max height for content as needed */
+    }
 }
