@@ -17,18 +17,21 @@
         <div class="map-container">
             <div id="map"></div>
         </div>
-        <div class="content" id="city-info">
-            <h2>Learn About A City</h2>
-            <p>Click the button to load information (according to Wikipedia) about a random city.</p>
+        <div id="city-info" class="content">
+            <h2>Learn About a City</h2>
+            <div class="scrollable-content">
+                <p>Click the button to load information about a random city using data from Wikipedia.</p>
+            </div>
             <div class="button-container">
                 <button class="random-button" id="explore-button" onclick="loadRandomCity()">Explore a City</button>
             </div>
         </div>
+
     </div>
 
 
     <footer>
-        &copy; ohspiker 2024
+        @ohspiker 2024
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>

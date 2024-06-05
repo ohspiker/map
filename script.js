@@ -3,7 +3,7 @@ let isFirstLoad = true;
 let currentCircle = null;
 
 function initializeMap() {
-    map = L.map('map').setView([20, 0], window.innerWidth < 768 ? 2 : 4); // Adjust zoom level based on screen width
+    map = L.map('map').setView([20, 0], 2);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -46,15 +46,10 @@ async function loadRandomCity() {
                 const extract = data.extract.toLowerCase();
                 const populationMatch = extract.match(/population of ([\d,]+)/);
                 const languageMatch = extract.match(/languages? spoken is? ([^.,]+)/);
-                const demographicsMatch = extract.match(/demographics? ethnicity? of ([^.,]+)/);
+                const demographicsMatch = extract.match(/demographics? of ([^.,]+)/);
 
                 if (populationMatch) {
                     additionalInfo += `<p><strong>Population:</strong> ${populationMatch[1]}</p>`;
-                } else {
-                    const infoboxPopulationMatch = extract.match(/<th>Population<\/th><td>([\d,]+)/);
-                    if (infoboxPopulationMatch) {
-                        additionalInfo += `<p><strong>Population:</strong> ${populationMatch[1]}</p>`;
-                    }
                 }
                 if (languageMatch) {
                     additionalInfo += `<p><strong>Main Language Spoken:</strong> ${languageMatch[1]}</p>`;
@@ -64,20 +59,22 @@ async function loadRandomCity() {
                 }
             }
 
+            additionalInfo = `<p>${summary}</p>`;
+            additionalInfo += `<p><strong>Coordinates:</strong> ${coordinates}</p>`;
+            additionalInfo += image;
+
             document.getElementById('city-info').innerHTML = `
-                <div class="content-wrapper">
-                    <h2>About ${title}</h2>
-                    <div class="scrollable-content">
-                        <p>${summary}</p>
-                        <p><strong>Coordinates:</strong> ${coordinates}</p>
-                        ${additionalInfo}
-                        ${image}
-                    </div>
+                <h2>About ${title}</h2>
+                <div class="scrollable-content">
+                    ${additionalInfo}
                 </div>
                 <div class="button-container">
                     <button class="random-button" id="explore-button" onclick="loadRandomCity()">Explore a New City</button>
                 </div>
             `;
+
+            // Scroll to top of the description
+            document.querySelector('.scrollable-content').scrollTop = 0;
         })
         .catch(error => console.error('Error fetching city data:', error));
 

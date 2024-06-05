@@ -120,12 +120,13 @@ footer {
     background-color: #83C5BE;
     color: #006D77;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     margin-top: auto;
     font-size: 1em;
     position: relative;
     bottom: 0;
     width: 100%;
+    max-width: 100%;
 }
 
 /* Media Query for Mobile Devices */
@@ -140,20 +141,37 @@ footer {
     .container {
         flex-direction: column;
         padding: 10px;
-        height: calc(100vh - 80px); /* Adjusting for header and footer heights */
+        justify-content: center;
     }
     .map-container, .content {
-        min-width: 100%;
         flex: none;
+        max-width: 100%;
     }
     .map-container {
-        height: 30%; /* Adjust height as needed */
+        height: 30%;
     }
     #city-info {
-        height: 60%; /* Adjust height as needed */
+        max-height: 45%; /* Adjust height as needed */
         overflow-y: auto;
     }
-    .scrollable-content {
-        max-height: calc(60% - 100px); /* Adjust max height for content as needed */
+    #city-info.content{
+        max-height: 45%;
     }
+    #city-info.content p{
+        font-size: 14px;
+    }
+    #city-info.content h2{
+        font-size: 18px;
+    }
+    .button-container {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        background-color: #EDF6F9;
+        padding: 10px 0;
+    }
+    .scrollable-content{
+        max-height: 350px;
+    }
+
 }
