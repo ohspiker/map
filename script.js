@@ -28,7 +28,7 @@ async function loadRandomCity() {
         color: '#E29578',
         fillColor: '#E29578',
         fillOpacity: 0.25,
-        radius: 3000
+        radius: 5000
     }).addTo(map);
 
     // Fetch Wikipedia summary and more information
