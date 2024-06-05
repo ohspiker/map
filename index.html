@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Cities Around the World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="logo">City Explorer</div>
+    </div>
+
+    <div class="container">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        <div class="content" id="city-info">
+            <h2>Learn About A City</h2>
+            <p>Click the button to load information (according to Wikipedia) about a random city.</p>
+            <div class="button-container">
+                <button class="random-button" id="explore-button" onclick="loadRandomCity()">Explore a City</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        &copy; ohspiker 2024
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #006D77;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #006D77;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+    background-color: #006D77;
+    align-items: stretch;
+}
+
+.map-container, .content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #EDF6F9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-container {
+    height: auto;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.content h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #006D77;
+    font-size: 1.5em;
+}
+
+.content p {
+    font-size: 1.2em;
+}
+
+.scrollable-content {
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.scrollable-content p {
+    padding-right: 10px;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 10px; /* Adjust the width of the scrollbar */
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+    background: #EDF6F9; /* The background of the scrollbar track, matching the container */
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: #006D77; /* The color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the scrollbar thumb */
+}
+
+.city-image {
+    max-width: 80%;
+    margin: 10px auto;
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px; /* Adding padding-top to the container */
+}
+
+.random-button {
+    background-color: #E29578;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.random-button:hover {
+    background-color: #FFDDD2;
+}
+
+footer {
+    background-color: #83C5BE;
+    color: #006D77;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
