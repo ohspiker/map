@@ -3,7 +3,7 @@ let isFirstLoad = true;
 let currentCircle = null;
 
 function initializeMap() {
-    map = L.map('map').setView([20, 0], 2);
+    map = L.map('map').setView([20, 0], window.innerWidth < 768 ? 2 : 4); // Adjust zoom level based on screen width
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
