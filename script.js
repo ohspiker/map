@@ -27,8 +27,8 @@ async function loadRandomCity() {
     currentCircle = L.circle(coords, {
         color: '#E29578',
         fillColor: '#E29578',
-        fillOpacity: 0.5,
-        radius: 2000
+        fillOpacity: 0.25,
+        radius: 3000
     }).addTo(map);
 
     // Fetch Wikipedia summary and more information
