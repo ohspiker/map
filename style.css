@@ -1,3 +1,4 @@
+/* Existing CSS */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #006D77;
@@ -58,7 +59,6 @@ body {
     margin-top: 0;
     color: #006D77;
     font-size: 1.5em;
-    margin-bottom: 0;
 }
 
 .content p {
@@ -94,11 +94,9 @@ body {
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px; /* Adding margin-top to the container */
-    padding-top: 15px; /* Adding padding-top to the container */
+    text-align: center;
+    margin-top: auto;
+    padding-top: 5px;
 }
 
 .random-button {
@@ -110,6 +108,7 @@ body {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s;
+    margin-top: 15px;
 }
 
 .random-button:hover {
@@ -128,22 +127,23 @@ footer {
     width: 100%;
 }
 
-/* Media Query for Mobile Devices */
+/* Mobile CSS */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        padding: 10px;
     }
-    
+
     .map-container, .content {
         min-width: 100%;
-        flex: none;
+        padding: 10px;
     }
-    
+
     .map-container {
-        height: 300px; /* Adjust height as needed */
+        height: 200px; /* Adjust the height of the map for mobile */
     }
-    
+
     .scrollable-content {
-        max-height: 200px; /* Adjust max height for content as needed */
+        max-height: 300px; /* Adjust the max height of the scrollable content for mobile */
     }
 }
